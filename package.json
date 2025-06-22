@@ -7,7 +7,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [
     "react",
@@ -25,9 +27,10 @@
   "devDependencies": {
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "gh-pages": "^6.3.0",
     "typescript": "^4.1.2"
   },
-  "homepage": "http://yourwebsite.com",
+  "homepage": "https://kevinverherstraeten.github.io/STS",
   "repository": {
     "type": "git",
     "url": "https://github.com/yourusername/STS.git"
