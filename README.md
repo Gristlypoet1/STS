@@ -31,14 +31,19 @@ The project has the following structure:
 ```
 STS
 ├── public
+│   ├── images
+│   │   └── sts_logo.avif   # Project logo
 │   └── index.html          # Main HTML file
 ├── src
-│   ├── App.tsx            # Main application component
-│   ├── index.tsx          # Entry point of the application
+│   ├── App.tsx             # Main application component
+│   ├── index.tsx           # Entry point of the application
 │   ├── components
-│   │   └── ExampleComponent.tsx  # Example component
+│   │   ├── ContactPage.tsx
+│   │   ├── HomePage.tsx
+│   │   ├── PricesPage.tsx
+│   │   └── TermsAndConditions.tsx
 │   └── styles
-│       └── App.css        # Styles for the application
+│       └── App.css         # Styles for the application
 ├── package.json            # npm configuration file
 ├── tsconfig.json           # TypeScript configuration file
 └── README.md               # Project documentation
