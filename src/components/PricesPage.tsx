@@ -57,10 +57,10 @@ const PricesPage: React.FC<PricesPageProps> = ({ language }) => {
         <tbody>
           {rows.map((row, idx) => (
             <tr key={idx}>
-              <td>{row.product}</td>
-              <td>{row.front}</td>
-              <td>{row.back}</td>
-              <td>{row.both}</td>
+              <td data-label={headers[0]}>{row.product}</td>
+              <td data-label={headers[1]}>{row.front}</td>
+              <td data-label={headers[2]}>{row.back}</td>
+              <td data-label={headers[3]}>{row.both}</td>
             </tr>
           ))}
         </tbody>
