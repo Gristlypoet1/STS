@@ -35,7 +35,7 @@ const PricesPage: React.FC<PricesPageProps> = ({ language }) => {
   const rows = tableRows[language] || tableRows['nl'];
 
   return (
-    <div>
+    <div className="prices-container">
       {language === 'nl' && <h1>Prijzen</h1>}
       {language === 'fr' && <h1>Prix</h1>}
       {language === 'en' && <h1>Prices</h1>}
@@ -46,25 +46,31 @@ const PricesPage: React.FC<PricesPageProps> = ({ language }) => {
         {language === 'en' && 'Here you can find our pricing for custom printed clothes.'}
         {language === 'de' && 'Hier finden Sie unsere Preise für maßgeschneiderte Kleidung.'}
       </p>
-      <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: 24 }}>
+      <table className="prices-table">
         <thead>
           <tr>
             {headers.map((header, idx) => (
-              <th key={idx} style={{ border: '1px solid #ccc', padding: 8, background: '#f5f5f5' }}>{header}</th>
+              <th key={idx}>{header}</th>
             ))}
           </tr>
         </thead>
         <tbody>
           {rows.map((row, idx) => (
             <tr key={idx}>
-              <td style={{ border: '1px solid #ccc', padding: 8 }}>{row.product}</td>
-              <td style={{ border: '1px solid #ccc', padding: 8 }}>{row.front}</td>
-              <td style={{ border: '1px solid #ccc', padding: 8 }}>{row.back}</td>
-              <td style={{ border: '1px solid #ccc', padding: 8 }}>{row.both}</td>
+              <td>{row.product}</td>
+              <td>{row.front}</td>
+              <td>{row.back}</td>
+              <td>{row.both}</td>
             </tr>
           ))}
         </tbody>
       </table>
+      <div className="prices-note">
+        {language === 'nl' && "Alle prijzen zijn incl. btw en onder voorbehoud van typefouten."}
+        {language === 'fr' && "Tous les prix incluent la TVA et sont sous réserve d'erreurs typographiques."}
+        {language === 'en' && "All prices include VAT and are subject to typographical errors."}
+        {language === 'de' && "Alle Preise inkl. MwSt. und vorbehaltlich Tippfehlern."}
+      </div>
     </div>
   );
 };
