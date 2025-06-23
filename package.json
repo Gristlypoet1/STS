@@ -33,7 +33,7 @@
   "homepage": "https://dev.scriptwave.be",
   "repository": {
     "type": "git",
-    "url": "https://gristlypoet1.github.io/STS/"
+    "url": "https://github.com/Gristlypoet1/STS.git"
   },
   "browserslist": {
     "production": [
