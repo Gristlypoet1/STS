@@ -3,8 +3,8 @@ import { Routes, Route, Link } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import PricesPage from './components/PricesPage';
 import ContactPage from './components/ContactPage';
-import './styles/App.css';
 import TermsAndConditions from './components/TermsAndConditions';
+import './styles/App.css';
 
 const App: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
