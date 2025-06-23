@@ -1,0 +1,119 @@
+.home-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #f9fafb;
+  border-radius: 12px;
+}
+
+.hero-section {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.features-section ul {
+  list-style: disc inside;
+  margin-bottom: 2rem;
+}
+
+.gallery-section {
+  margin-top: 2rem;
+}
+
+.gallery-placeholder {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.gallery-item {
+  width: 180px;
+  height: 120px;
+  background: #e2e8f0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 0.875rem;
+}
+
+.about-section {
+  margin-top: 2rem;
+  background: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+}
+
+.cta-section {
+  margin: 2.5rem 0 2rem 0;
+  text-align: center;
+}
+
+.cta-btn {
+  background: darkorange;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.2s;
+}
+.cta-btn:hover {
+  background: #ff9800;
+}
+
+.partners-section {
+  margin-top: 2rem;
+  text-align: center;
+}
+.partners-placeholder {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.partner-logo {
+  width: 120px;
+  height: 60px;
+  background: #e2e8f0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 1rem;
+}
+
+/* Responsive voor HomePage */
+@media (max-width: 700px) {
+  .home-container {
+    max-width: 98vw;
+    padding: 1rem 0.5rem;
+    margin: 1rem auto;
+    border-radius: 10px;
+  }
+  .about-section,
+  .cta-section,
+  .partners-section {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .gallery-placeholder,
+  .partners-placeholder {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .gallery-item,
+  .partner-logo {
+    width: 90vw;
+    max-width: 320px;
+    height: 80px;
+    font-size: 0.95rem;
+  }
+}

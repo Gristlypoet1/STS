@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/PricesPage.css';
 
 interface PricesPageProps {
   language: string;
