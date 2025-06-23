@@ -4,7 +4,7 @@ interface ContactPageProps {
   language: string;
 }
 
-const supportedLanguages = ['nl', 'fr', 'en', 'de'];
+const supportedLanguages = ['nl', 'fr', 'en', 'de'] as const;
 type LanguageKey = typeof supportedLanguages[number];
 
 const translations: Record<LanguageKey, {
@@ -50,7 +50,6 @@ const translations: Record<LanguageKey, {
 };
 
 const ContactPage: React.FC<ContactPageProps> = ({ language }) => {
-  // Kies de juiste taal, standaard NL
   const lang: LanguageKey = supportedLanguages.includes(language as LanguageKey)
     ? (language as LanguageKey)
     : 'nl';
@@ -70,12 +69,12 @@ const ContactPage: React.FC<ContactPageProps> = ({ language }) => {
   };
 
   return (
-    <div>
+    <div className="contact-container">
       <h1>{t.title}</h1>
       {submitted ? (
-        <p>{t.success}</p>
+        <p className="contact-success">{t.success}</p>
       ) : (
-        <form onSubmit={handleSubmit} style={{ maxWidth: 400 }}>
+        <form onSubmit={handleSubmit} className="contact-form">
           <div>
             <label>
               {t.name}:<br />
