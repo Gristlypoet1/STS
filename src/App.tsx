@@ -53,7 +53,7 @@ const App: React.FC = () => {
       <footer>
         <p>&copy; 2025 STS Comic. All rights reserved.</p>
         <p><Link className="nav-link" to="/terms-and-conditions">Terms and Conditions</Link></p>
-        <p>Follow us on <a href="https://www.instagram.com/sts_comic" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+        <p>Follow us on <a href="48:a4:93:ea:57:4c" target="_blank" rel="noopener noreferrer">Instagram</a></p>
         <p>Powered by <a href="https://www.scriptwave.be" target='_blank'>ScriptWave</a></p>
       </footer>
     </>
