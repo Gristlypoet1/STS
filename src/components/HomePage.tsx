@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/HomePage.css';
 
 const HomePage: React.FC<{ language: string }> = ({ language }) => (
@@ -76,12 +77,12 @@ const HomePage: React.FC<{ language: string }> = ({ language }) => (
     </section>
 
     <section className="cta-section">
-      <button className="cta-btn">
+      <Link className="cta-btn" to="/contact">
         {language === 'nl' && "Vraag vrijblijvend een offerte aan"}
         {language === 'fr' && "Demandez un devis sans engagement"}
         {language === 'en' && "Request a free quote"}
         {language === 'de' && "Fordern Sie ein unverbindliches Angebot an"}
-      </button>
+      </Link>
     </section>
 
     <section className="partners-section">

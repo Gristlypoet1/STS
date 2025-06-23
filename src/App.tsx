@@ -13,7 +13,9 @@ const App: React.FC = () => {
   return (
     <>
       <header className={menuOpen ? "menu-open" : ""}>
-        <img src="/images/sts_logo.avif" alt="STS Logo" className="logo" />
+        <Link to="/" onClick={() => setMenuOpen(false)}>
+          <img src="/images/sts_logo.avif" alt="STS Logo" className="logo" />
+        </Link>
         <nav>
           <button
             className="hamburger"
