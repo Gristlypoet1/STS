@@ -1,5 +1,5 @@
 {
-  "name": "STS",
+  "name": "sts",
   "version": "1.0.0",
   "description": "A React project for the STS website.",
   "main": "src/index.tsx",
