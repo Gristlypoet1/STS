@@ -41,14 +41,36 @@ const App: React.FC = () => {
         </select>
       </header>
 
-      <div className="container">
-        <Routes>
-          <Route path="/" element={<HomePage language={language} />} />
-          <Route path="/prices" element={<PricesPage language={language} />} />
-          <Route path="/contact" element={<ContactPage language={language} />} />
-          <Route path="/terms-and-conditions" element={<TermsAndConditions language={language} />} />
-        </Routes>
-      </div>
+      {/* Alleen container rond Home en Prices */}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <HomePage language={language} />
+          }
+        />
+        <Route
+          path="/prices"
+          element={
+            <div className="container">
+              <PricesPage language={language} />
+            </div>
+          }
+        />
+        <Route
+          path="/terms-and-conditions"
+          element={
+            <div className="container">
+              <TermsAndConditions language={language} />
+            </div>
+          }
+        />
+        {/* Contactpagina zonder container */}
+        <Route
+          path="/contact"
+          element={<ContactPage language={language} />}
+        />
+      </Routes>
 
       <footer>
         <p>&copy; 2025 STS Comic. All rights reserved.</p>

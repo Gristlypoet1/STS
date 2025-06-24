@@ -3,26 +3,34 @@ html, body, #root {
     height: 100%;
     margin: 0;
     padding: 0;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    background: #f4f6fb;
+    color: #222;
+    scroll-behavior: smooth;
 }
 
-#root {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
+/* Extra lichte schaduw voor container en logo */
 .container {
     flex: 1;
     margin: 0 auto;
-    padding: 20px;
+    padding: 32px 16px 32px 16px;
+    max-width: 1100px;
+    width: 100%;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 6px 32px rgba(0,0,0,0.10), 0 1.5px 6px rgba(255,152,0,0.04);
+    margin-top: 32px;
+    margin-bottom: 32px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
+.container--plain {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
     padding: 0;
+    margin: 0;
 }
 
-/* Logo styles */
 .logo {
     display: flex;
     align-items: center;
@@ -31,6 +39,12 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
     width: 150px;
     height: 100px;
+    transition: transform 0.2s;
+    background: transparent;
+    box-shadow: none;
+}
+.logo:hover {
+    transform: scale(1.04) rotate(-2deg);
 }
 
 /* Header styles */
@@ -38,9 +52,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    background-color: black;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 24px 48px;
+    background: linear-gradient(90deg, #232526 0%, #414345 100%);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 /* Navbar styles */
@@ -48,13 +66,13 @@ nav {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 20px 40px 0 0;
+    padding: 0;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 16px;
+    gap: 18px;
     margin: 0;
     padding: 0;
 }
@@ -65,19 +83,22 @@ nav li {
 }
 
 nav .nav-link {
-    background-color: darkorange;
-    color: white;
+    background: linear-gradient(90deg, #ff9800 0%, #ffb347 100%);
+    color: #fff;
     border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
+    border-radius: 6px;
+    padding: 10px 24px;
     cursor: pointer;
     text-decoration: none;
-    transition: background-color 0.3s;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
     font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(255,152,0,0.08);
 }
-
 nav .nav-link:hover {
-    background-color: orange;
+    background: #ff9800;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(255,152,0,0.13);
 }
 
 /* Hamburger menu */
@@ -107,23 +128,59 @@ nav .nav-link:hover {
 /* Footer styles */
 footer {
     text-align: center;
-    padding: 20px;
-    background-color: black;
-    color: white;
+    padding: 32px 10px 24px 10px;
+    background: linear-gradient(90deg, #232526 0%, #414345 100%);
+    color: #fff;
+    font-size: 1.05rem;
+    border-top: 1px solid #eee;
+    margin-top: 32px;
+    border-radius: 0 0 18px 18px;
+}
+footer a {
+    color: #ffb347;
+    text-decoration: underline;
+}
+footer a:hover {
+    color: #fff;
 }
 
 /* Language select styles */
 .language-select {
-  margin-left: 16px;
-  padding: 6px 12px;
-  border-radius: 4px;
+  margin-left: 18px;
+  padding: 7px 16px;
+  border-radius: 6px;
   border: 1px solid #ccc;
+  font-size: 1rem;
+  background: #f9fafb;
+  color: #222;
+  transition: border 0.2s;
+}
+.language-select:focus {
+  border: 1.5px solid #ff9800;
+  outline: none;
 }
 
 /* Responsive styles voor navbar/hamburger */
+@media (max-width: 900px) {
+  .container {
+    max-width: 98vw;
+    padding: 16px 2vw;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    border-radius: 12px;
+  }
+  header {
+    padding: 12px 10px;
+  }
+  .logo {
+    height: 60px;
+    width: auto;
+    margin-bottom: 0;
+  }
+}
+
 @media (max-width: 768px) {
   header {
-    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -132,7 +189,7 @@ footer {
     z-index: 100;
   }
   .logo {
-    height: 60px;
+    height: 48px;
     width: auto;
     margin-bottom: 0;
   }
@@ -160,7 +217,7 @@ footer {
     top: 100%;
     left: 0;
     right: 0;
-    background: #222;
+    background: #232526;
     flex-direction: column;
     width: 100vw;
     display: none;
@@ -201,5 +258,15 @@ footer {
   nav .nav-link.active {
     background: #333;
     color: #ff9800;
+  }
+  .container {
+    border-radius: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  footer {
+    border-radius: 0;
+    padding: 24px 4px 16px 4px;
+    font-size: 0.98rem;
   }
 }

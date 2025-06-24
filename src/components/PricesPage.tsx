@@ -36,7 +36,7 @@ const PricesPage: React.FC<PricesPageProps> = ({ language }) => {
   const rows = tableRows[language] || tableRows['nl'];
 
   return (
-    <div className="prices-container">
+    <div className="container container--plain">
       {language === 'nl' && <h1>Prijzen</h1>}
       {language === 'fr' && <h1>Prix</h1>}
       {language === 'en' && <h1>Prices</h1>}
